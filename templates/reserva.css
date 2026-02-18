@@ -1,0 +1,141 @@
+/* Reset básico para remover padding e margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding-top: 80px;
+    text-align: center;
+}
+
+/* Estilização da navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.site-name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.nav-right a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização do conteúdo principal */
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+strong {
+    color: #333;
+}
+
+#valor-reserva {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Estilização dos botões */
+a.botao-confirmar,
+a.botao-cancelar {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+a.botao-confirmar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+a.botao-confirmar:hover {
+    background-color: #45a049;
+}
+
+a.botao-cancelar {
+    background-color: #f44336;
+    color: white;
+}
+
+a.botao-cancelar:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    a.botao-confirmar,
+    a.botao-cancelar {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

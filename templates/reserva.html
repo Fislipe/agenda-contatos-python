@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Reserva</title>
+    <link rel="stylesheet" href="reserva.css">
+    <script>
+        // Função para obter os parâmetros da URL
+        function obterParametros() {
+            const params = new URLSearchParams(window.location.search);
+            const horario = params.get('horario');
+            const mesa = params.get('mesa');
+
+            // Exibir os valores na página
+            document.getElementById('horario-reserva').textContent = horario;
+            document.getElementById('mesa-reserva').textContent = mesa;
+
+            // Calcular o valor com base no tipo da mesa
+            let valor = 0;
+            if (mesa == "1") {
+                valor = 20; // Valor para mesa de 1 pessoa
+            } else if (mesa == "2") {
+                valor = 35; // Valor para mesa de 2 pessoas
+            } else if (mesa == "3") {
+                valor = 50; // Valor para mesa de 3 pessoas
+            } else if (mesa == "4") {
+                valor = 65; // Valor para mesa de 4 pessoas
+            }
+
+            // Exibir o valor calculado
+            document.getElementById('valor-reserva').textContent = "R$ " + valor + ",00";
+        }
+
+        // Chamar a função quando a página carregar
+        window.onload = obterParametros;
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <div class="nav-left">
+                    <img src="../img/icone.png" alt="Ícone" class="nav-icon">
+                    <span class="site-name">Saúde Meu Prato</span>
+                </div>
+                <ul class="nav-right">
+                    <li><a href="index.html">Voltar</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Confirmar Reserva</h1>
+        <p><strong>Horário escolhido:</strong> <span id="horario-reserva"></span></p>
+        <p><strong>Mesa escolhida:</strong> <span id="mesa-reserva"></span></p>
+        <p><strong>Valor da reserva:</strong> <span id="valor-reserva"></span></p>
+        
+        <p>Tem certeza de que deseja reservar essa mesa?</p>
+        
+        <a href="confirmacao.html" class="botao-confirmar">Sim, quero reservar</a>
+        <a href="index.html" class="botao-cancelar">Não, cancelar</a>
+    </main>
+</body>
+</html>
